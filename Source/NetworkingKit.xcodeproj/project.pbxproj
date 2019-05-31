@@ -32,6 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		038A31DF22A11EDA00F653CF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 038A31DE22A11EDA00F653CF /* LICENSE */; };
 		5EDFD50C229F315C0063CF17 /* NetworkingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDFD50A229F315C0063CF17 /* NetworkingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EDFD513229F31750063CF17 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD512229F31750063CF17 /* Endpoint.swift */; };
 		5EDFD515229F31950063CF17 /* HTTP+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD514229F31950063CF17 /* HTTP+Header.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		038A31DE22A11EDA00F653CF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5EDFD507229F315C0063CF17 /* NetworkingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDFD50A229F315C0063CF17 /* NetworkingKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingKit.h; sourceTree = "<group>"; };
 		5EDFD50B229F315C0063CF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		5EDFD4FD229F315C0063CF17 = {
 			isa = PBXGroup;
 			children = (
+				038A31DE22A11EDA00F653CF /* LICENSE */,
 				5EDFD509229F315C0063CF17 /* NetworkingKit */,
 				5EDFD508229F315C0063CF17 /* Products */,
 			);
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038A31DF22A11EDA00F653CF /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
