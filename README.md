@@ -1,6 +1,8 @@
 
 # NetworkingKit
+
 ![](https://img.shields.io/badge/version-1.0-brightgreen.svg)
+
 Simple Dynamic Framework, providing abstraction over `Foundation`'s networking classes
 
 `NetworkingKit` contains wrapper classes of `URLSession` that give you the option to make a API call by subclassing `Endpoint` and providing network specific settings as ovverrides in your class.
