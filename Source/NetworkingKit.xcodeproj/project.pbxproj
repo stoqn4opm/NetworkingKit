@@ -6,6 +6,31 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		5EDFD57F22A10D600063CF17 /* NetwokingKit Generate Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5EDFD58022A10D600063CF17 /* Build configuration list for PBXAggregateTarget "NetwokingKit Generate Documentation" */;
+			buildPhases = (
+				5EDFD58322A10D690063CF17 /* Generate Documentation */,
+			);
+			dependencies = (
+			);
+			name = "NetwokingKit Generate Documentation";
+			productName = "NetwokingKit Generate Documentation";
+		};
+		5EDFD58422A10DA80063CF17 /* NetworkingKit Open Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5EDFD58522A10DA90063CF17 /* Build configuration list for PBXAggregateTarget "NetworkingKit Open Documentation" */;
+			buildPhases = (
+				5EDFD58822A10DAD0063CF17 /* Open Documentation */,
+			);
+			dependencies = (
+			);
+			name = "NetworkingKit Open Documentation";
+			productName = "NetworkingKit Open Documentation";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		5EDFD50C229F315C0063CF17 /* NetworkingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDFD50A229F315C0063CF17 /* NetworkingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EDFD513229F31750063CF17 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD512229F31750063CF17 /* Endpoint.swift */; };
@@ -193,6 +218,12 @@
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
 					};
+					5EDFD57F22A10D600063CF17 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					5EDFD58422A10DA80063CF17 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 5EDFD501229F315C0063CF17 /* Build configuration list for PBXProject "NetworkingKit" */;
@@ -208,6 +239,8 @@
 			projectRoot = "";
 			targets = (
 				5EDFD506229F315C0063CF17 /* NetworkingKit */,
+				5EDFD57F22A10D600063CF17 /* NetwokingKit Generate Documentation */,
+				5EDFD58422A10DA80063CF17 /* NetworkingKit Open Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -221,6 +254,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EDFD58322A10D690063CF17 /* Generate Documentation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Documentation";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# pass as first argument the folder name in which you want your documentation to be placed.    \n# pass as second argument the visibility level you want to be seen. (private | internal | public | open)\n# pass as third argument where is your README file in your repo from the locality of the directory that holds this project file.\nsh ../Scripts/JazzyDocsGen.sh ../Documentation private ../README.md\n";
+		};
+		5EDFD58822A10DAD0063CF17 /* Open Documentation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Open Documentation";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# pass as first argument the folder name in which you want your documentation to be placed.    \n# pass as second argument the visibility level you want to be seen. (private | internal | public | open)\n# pass as third argument where is your README file in your repo from the locality of the directory that holds this project file.\nopen ../Documentation/index.html\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5EDFD503229F315C0063CF17 /* Sources */ = {
@@ -421,6 +493,42 @@
 			};
 			name = Release;
 		};
+		5EDFD58122A10D600063CF17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6NHWRV56U;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5EDFD58222A10D600063CF17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6NHWRV56U;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5EDFD58622A10DA90063CF17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6NHWRV56U;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5EDFD58722A10DA90063CF17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6NHWRV56U;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -438,6 +546,24 @@
 			buildConfigurations = (
 				5EDFD510229F315C0063CF17 /* Debug */,
 				5EDFD511229F315C0063CF17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EDFD58022A10D600063CF17 /* Build configuration list for PBXAggregateTarget "NetwokingKit Generate Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EDFD58122A10D600063CF17 /* Debug */,
+				5EDFD58222A10D600063CF17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EDFD58522A10DA90063CF17 /* Build configuration list for PBXAggregateTarget "NetworkingKit Open Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EDFD58622A10DA90063CF17 /* Debug */,
+				5EDFD58722A10DA90063CF17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
