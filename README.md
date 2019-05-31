@@ -4,7 +4,7 @@
 
 Simple Dynamic Framework, providing abstraction over `Foundation`'s networking classes
 
-`NetworkingKit` contains wrapper classes of `URLSession` that give you the option to make a API call by subclassing `Endpoint` and providing network specific settings as ovverrides in your class.
+`NetworkingKit` contains wrapper classes of `URLSession` that give you the option to make a API call by subclassing `Endpoint` and providing network specific settings as overrides in your class.
 
 By doing this, `NetworkingKit` is able to achieve syntax of web call at user level (app level) that look like:
 ```swift
@@ -43,6 +43,7 @@ Endpoint.WithResponseTypeOnly<ResponseDataType: Codable>
 ```
 
 Depending on whether you would like to send http request body in your call.
+
 3. Provide custom `RequestDataType` and/or `ResponseDataType` to your liking
 4. Set various communication parameters like `host`, `scheme`, `port`, `timeout`, etc... by overriding the inherited computed variables in your subclass
 5. Call the inherited constructor of your subclass with appropriate completion block (the parameter types are inherited automatically) and in the case of `Endpoint.WithRequestAndResponseType` provide your reqest data too as init parameter.
