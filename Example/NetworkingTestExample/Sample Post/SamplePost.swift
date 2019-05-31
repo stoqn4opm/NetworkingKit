@@ -8,10 +8,12 @@
 
 import NetworkingKit
 
+/// This container has all things reagaring the `SamplePost` call.
 struct SamplePost {}
 
 extension SamplePost {
     
+    /// If you want to call the endpoint initialize this.
     final class Call: Endpoint.WithRequestAndResponseType<Request, Response> {
         
         override var host: String { return "postman-echo.com" }

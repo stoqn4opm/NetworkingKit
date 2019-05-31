@@ -23,6 +23,7 @@ struct SampleGet { }
 
 extension SampleGet {
 
+    /// If you want to call the endpoint initialize this.
     final class Call: Endpoint.WithResponseTypeOnly<Response> {
         
         override var host: String { return "postman-echo.com" }

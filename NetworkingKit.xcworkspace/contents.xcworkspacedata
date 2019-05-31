@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Example/NetworkingTestExample/NetworkingTestExample.xcodeproj">
+      location = "group:Example/NetworkingTestExample.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Source/NetworkingKit.xcodeproj">

@@ -66,8 +66,8 @@
 		5EDFD54622A0621E0063CF17 = {
 			isa = PBXGroup;
 			children = (
-				5EDFD56422A062490063CF17 /* NetworkingKit.framework */,
 				5EDFD55122A0621E0063CF17 /* NetworkingTestExample */,
+				5EDFD57E22A0A9580063CF17 /* Frameworks */,
 				5EDFD55022A0621E0063CF17 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,8 +98,8 @@
 		5EDFD56C22A087220063CF17 /* Sample Get */ = {
 			isa = PBXGroup;
 			children = (
-				5EDFD56D22A087350063CF17 /* SampleGet.swift */,
 				5EDFD56F22A0874C0063CF17 /* SampleGet+ResponseData.swift */,
+				5EDFD56D22A087350063CF17 /* SampleGet.swift */,
 			);
 			path = "Sample Get";
 			sourceTree = "<group>";
@@ -112,6 +112,14 @@
 				5EDFD57622A08A590063CF17 /* SamplePost+ResponseData.swift */,
 			);
 			path = "Sample Post";
+			sourceTree = "<group>";
+		};
+		5EDFD57E22A0A9580063CF17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EDFD56422A062490063CF17 /* NetworkingKit.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

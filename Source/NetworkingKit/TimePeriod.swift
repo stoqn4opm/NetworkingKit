@@ -40,7 +40,7 @@ public enum TimePeriod {
 
 extension TimePeriod {
     
-    /// Gets the raw time duration if this case.
+    /// Gets the raw time duration as `TimeInterval`.
     var interval: TimeInterval {
         
         switch self {

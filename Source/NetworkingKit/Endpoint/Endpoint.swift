@@ -8,4 +8,7 @@
 
 import Foundation
 
-public struct Endpoint {}
+// MARK: - Group Definition
+
+/// Group Containing All supported types of endpoints that `NetworkingKit` supports.
+public struct Endpoint { }
