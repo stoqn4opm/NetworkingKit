@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Error Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/Error" class="dashAnchor"></a>
+    <a title="Error Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html"> Docs</a> (94% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html"> Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        Error Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/TimePeriod.html">TimePeriod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Extensions/URL.html">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/URL/Scheme.html">– Scheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/URLResponse.html">URLResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/WithRequestAndResponseType.html">– WithRequestAndResponseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/WithResponseTypeOnly.html">– WithResponseTypeOnly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP.html">HTTP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP/Method.html">– Method</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP/Header.html">– Header</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Error</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Error</span> <span class="p">:</span> <span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span></code></pre>
+
+                </div>
+              </div>
+            <p>All possible errors that can occur in regards to Endpoints.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV5ErrorO23failedToGenerateRequestyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/failedToGenerateRequest" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV5ErrorO23failedToGenerateRequestyA2EmF">failedToGenerateRequest</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when you have entered wrong url request data like host or path in wrong format.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">failedToGenerateRequest</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV5ErrorO013inputEncodingD7OccuredyAEsAD_pSgcAEmF"></a>
+                    <a name="//apple_ref/swift/Element/inputEncodingErrorOccured(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV5ErrorO013inputEncodingD7OccuredyAEsAD_pSgcAEmF">inputEncodingErrorOccured(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs in endpoint that has requst data, when the conversion to raw <code>Data</code> of this request container fails.</p>
+
+<p>By default, <code>Codable</code> JSONs are supported, but you can provide custom conversions
+by overriding the <code>encodeRequest()</code> function.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">inputEncodingErrorOccured</span><span class="p">(</span><span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV5ErrorO010urlSessionD7OccuredyAEsAD_pSgcAEmF"></a>
+                    <a name="//apple_ref/swift/Element/urlSessionErrorOccured(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV5ErrorO010urlSessionD7OccuredyAEsAD_pSgcAEmF">urlSessionErrorOccured(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when the <code>Foundation</code> network classes give errors back.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">urlSessionErrorOccured</span><span class="p">(</span><span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV5ErrorO21unexpectedURLResponseyAESSSgcAEmF"></a>
+                    <a name="//apple_ref/swift/Element/unexpectedURLResponse(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV5ErrorO21unexpectedURLResponseyAESSSgcAEmF">unexpectedURLResponse(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when we receive <code>URLResponse</code> that is different than <code>HTTPURLResponse</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">unexpectedURLResponse</span><span class="p">(</span><span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV5ErrorO13badStatusCodeyAESicAEmF"></a>
+                    <a name="//apple_ref/swift/Element/badStatusCode(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV5ErrorO13badStatusCodeyAESicAEmF">badStatusCode(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs if the endpoint returns http status code that is not in 200..&lt;400.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">badStatusCode</span><span class="p">(</span><span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV5ErrorO14noDataReturnedyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/noDataReturned" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV5ErrorO14noDataReturnedyA2EmF">noDataReturned</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when the endpoint does not give any response to work with.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">noDataReturned</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV5ErrorO016responseDecodingD7OccuredyAEsAD_pSgcAEmF"></a>
+                    <a name="//apple_ref/swift/Element/responseDecodingErrorOccured(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV5ErrorO016responseDecodingD7OccuredyAEsAD_pSgcAEmF">responseDecodingErrorOccured(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when the data returned from the server can not be decoded correctly into the set <code>ResponseType</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">responseDecodingErrorOccured</span><span class="p">(</span><span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-31)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Key Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../../js/jquery.min.js" defer></script>
+    <script src="../../../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/Key" class="dashAnchor"></a>
+    <a title="Key Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../../index.html"> Docs</a> (94% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../../index.html"> Reference</a>
+        <img id="carat" src="../../../img/carat.png" />
+        Key Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../../Enums/TimePeriod.html">TimePeriod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../../Extensions/URL.html">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../../Extensions/URL/Scheme.html">– Scheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../../Extensions/URLResponse.html">URLResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../../Structs/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../../Structs/Endpoint/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../../Structs/Endpoint/WithRequestAndResponseType.html">– WithRequestAndResponseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../../Structs/Endpoint/WithResponseTypeOnly.html">– WithResponseTypeOnly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../../Structs/HTTP.html">HTTP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../../Structs/HTTP/Method.html">– Method</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../../Structs/HTTP/Header.html">– Header</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Key</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Key</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                </div>
+              </div>
+            <p>Collection of commonly used http header keys.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit4HTTPV6HeaderV3KeyO13authorizationyA2GmF"></a>
+                    <a name="//apple_ref/swift/Element/authorization" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit4HTTPV6HeaderV3KeyO13authorizationyA2GmF">authorization</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The HTTP Authorization request header contains the credentials to authenticate a user agent with a server,
+usually after the server has responded with a 401 Unauthorized status and the WWW-Authenticate header.</p>
+
+<p>Example:</p>
+<pre class="highlight swift"><code><span class="kt">Authorization</span><span class="p">:</span> <span class="kt">Basic</span> <span class="kt">YWxhZGRpbjpvcGVuc2VzYW1l</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">authorization</span> <span class="o">=</span> <span class="s">"Authorization"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit4HTTPV6HeaderV3KeyO6acceptyA2GmF"></a>
+                    <a name="//apple_ref/swift/Element/accept" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit4HTTPV6HeaderV3KeyO6acceptyA2GmF">accept</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Accept request HTTP header advertises which content types, expressed as MIME types,
+the client is able to understand. Using content negotiation, the server then selects one of the proposals,
+uses it and informs the client of its choice with the Content-Type response header. Browsers set adequate values
+for this header depending on the context where the request is done: when fetching a CSS stylesheet
+a different value is set for the request than when fetching an image, video or a script.</p>
+
+<p>Example:</p>
+<pre class="highlight swift"><code><span class="kt">Accept</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span>
+<span class="kt">Accept</span><span class="p">:</span> <span class="n">image</span><span class="cm">/*
+General default
+Accept: */</span><span class="o">*</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">accept</span> <span class="o">=</span> <span class="s">"Accept"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit4HTTPV6HeaderV3KeyO14acceptEncodingyA2GmF"></a>
+                    <a name="//apple_ref/swift/Element/acceptEncoding" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit4HTTPV6HeaderV3KeyO14acceptEncodingyA2GmF">acceptEncoding</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Accept-Encoding request HTTP header advertises which content encoding, usually a compression algorithm,
+the client is able to understand. Using content negotiation, the server selects one of the proposals,
+uses it and informs the client of its choice with the Content-Encoding response header.</p>
+
+<p>Example:</p>
+<pre class="highlight swift"><code><span class="kt">Accept</span><span class="o">-</span><span class="kt">Encoding</span><span class="p">:</span> <span class="n">gzip</span>
+<span class="kt">Accept</span><span class="o">-</span><span class="kt">Encoding</span><span class="p">:</span> <span class="n">compress</span>
+<span class="kt">Accept</span><span class="o">-</span><span class="kt">Encoding</span><span class="p">:</span> <span class="n">deflate</span>
+<span class="kt">Accept</span><span class="o">-</span><span class="kt">Encoding</span><span class="p">:</span> <span class="n">br</span>
+<span class="kt">Accept</span><span class="o">-</span><span class="kt">Encoding</span><span class="p">:</span> <span class="n">identity</span>
+<span class="kt">Accept</span><span class="o">-</span><span class="kt">Encoding</span><span class="p">:</span> <span class="o">*</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">acceptEncoding</span> <span class="o">=</span> <span class="s">"Accept-Encoding"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit4HTTPV6HeaderV3KeyO11contentTypeyA2GmF"></a>
+                    <a name="//apple_ref/swift/Element/contentType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit4HTTPV6HeaderV3KeyO11contentTypeyA2GmF">contentType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Content-Type entity header is used to indicate the media type of the resource.</p>
+
+<p>Example:</p>
+<pre class="highlight swift"><code><span class="kt">Content</span><span class="o">-</span><span class="k">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+<span class="kt">Content</span><span class="o">-</span><span class="k">Type</span><span class="p">:</span> <span class="n">multipart</span><span class="o">/</span><span class="n">form</span><span class="o">-</span><span class="n">data</span><span class="p">;</span> <span class="n">boundary</span><span class="o">=</span><span class="n">something</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">contentType</span> <span class="o">=</span> <span class="s">"Content-Type"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit4HTTPV6HeaderV3KeyO9userAgentyA2GmF"></a>
+                    <a name="//apple_ref/swift/Element/userAgent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit4HTTPV6HeaderV3KeyO9userAgentyA2GmF">userAgent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The User-Agent request header contains a characteristic string that allows the network protocol peers to identify
+the application type, operating system, software vendor or software version of the requesting software user agent.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">userAgent</span> <span class="o">=</span> <span class="s">"User-Agent"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-31)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

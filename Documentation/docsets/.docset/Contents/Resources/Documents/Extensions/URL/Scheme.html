@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Scheme Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/Scheme" class="dashAnchor"></a>
+    <a title="Scheme Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html"> Docs</a> (94% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html"> Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        Scheme Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/TimePeriod.html">TimePeriod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Extensions/URL.html">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/URL/Scheme.html">– Scheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/URLResponse.html">URLResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/WithRequestAndResponseType.html">– WithRequestAndResponseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/WithResponseTypeOnly.html">– WithResponseTypeOnly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP.html">HTTP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP/Method.html">– Method</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP/Header.html">– Header</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Scheme</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Scheme</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                </div>
+              </div>
+            <p>The URI scheme identifies the protocol to be used to access the resource on the Internet. The most common are HTTP (without SSL) or HTTPS (with SSL).</p>
+
+<ul>
+<li>http: Hypertext Transfer Protocol</li>
+<li>https: HTTP over Transport Layer Security</li>
+</ul>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV13NetworkingKitE6SchemeO4httpyA2FmF"></a>
+                    <a name="//apple_ref/swift/Element/http" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV13NetworkingKitE6SchemeO4httpyA2FmF">http</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>HTTP means HyperText Transfer Protocol.</p>
+
+<p>HTTP is the underlying protocol used by the World Wide Web and this protocol defines how
+messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">http</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV13NetworkingKitE6SchemeO5httpsyA2FmF"></a>
+                    <a name="//apple_ref/swift/Element/https" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV13NetworkingKitE6SchemeO5httpsyA2FmF">https</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>HTTPS means Hyper Text Transfer Protocol Secure. Basically, it is the secure version of HTTP.</p>
+
+<p>Communications between the browser and website are encrypted by Transport Layer Security (TLS), or its predecessor, Secure Sockets Layer (SSL).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">https</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-31)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

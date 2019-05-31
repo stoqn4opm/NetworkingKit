@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WithResponseTypeOnly Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/WithResponseTypeOnly" class="dashAnchor"></a>
+    <a title="WithResponseTypeOnly Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html"> Docs</a> (94% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html"> Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        WithResponseTypeOnly Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/TimePeriod.html">TimePeriod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Extensions/URL.html">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/URL/Scheme.html">– Scheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/URLResponse.html">URLResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/WithRequestAndResponseType.html">– WithRequestAndResponseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Endpoint/WithResponseTypeOnly.html">– WithResponseTypeOnly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP.html">HTTP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP/Method.html">– Method</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/HTTP/Header.html">– Header</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>WithResponseTypeOnly</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">WithResponseTypeOnly</span><span class="o">&lt;</span><span class="kt">ResponseDataType</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">ResponseDataType</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">ResponseDataType</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Endpoint that does not set http request body.</p>
+
+<p>In order to user this kind of endpoint, you have to:</p>
+
+<ul>
+<li>Subclass it and set specific <code>ResponseDataType</code></li>
+<li>Override whichever computed properties you like from the class to configure your network target</li>
+<li>Call the initialiser of the Subclass and pass it completion block with <code>ResponseDataType</code> and <code>Endpont.Error</code></li>
+</ul>
+
+<p>By default Codable JSONs are supported, but if you want you can provide your custom encoding
+by overriding the <code>decodeResponse()</code> function.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC6scheme10Foundation3URLVAAE6SchemeOvp"></a>
+                    <a name="//apple_ref/swift/Property/scheme" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC6scheme10Foundation3URLVAAE6SchemeOvp">scheme</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The scheme describes the protocol that will be used to reach the desired resource over the network.</p>
+
+<p><code>NetworkingKit</code> supports <code>http</code> and <code>https</code>.</p>
+
+<p>Default value is <code>.https</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">scheme</span><span class="p">:</span> <span class="kt">URL</span><span class="o">.</span><span class="kt">Scheme</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC4hostSSvp"></a>
+                    <a name="//apple_ref/swift/Property/host" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC4hostSSvp">host</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The network host we are trying to reach.</p>
+
+<p>Default value is <code>&quot;localhost&quot;</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">host</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC4ports6UInt16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/port" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC4ports6UInt16Vvp">port</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The port over which we want to reach the desired network resource.</p>
+
+<p>Commonly used ports are:</p>
+
+<ul>
+<li>443 for https</li>
+<li>80 for http</li>
+</ul>
+
+<p>Default values are 443 and 80 based on the scheme.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">UInt16</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC4pathSSvp"></a>
+                    <a name="//apple_ref/swift/Property/path" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC4pathSSvp">path</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The path component of the url, describing exactly which endpoint we want to reach of this host.</p>
+
+<p>Default value is <code>&quot;/&quot;</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC10queryItemsSay10Foundation12URLQueryItemVGvp"></a>
+                    <a name="//apple_ref/swift/Property/queryItems" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC10queryItemsSay10Foundation12URLQueryItemVGvp">queryItems</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Collection of name-value pairs from the query portion of a URL.</p>
+
+<p>Default value is <code>[]</code> (empty).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">queryItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">URLQueryItem</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC7headersSayAA4HTTPV6HeaderVGvp"></a>
+                    <a name="//apple_ref/swift/Property/headers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC7headersSayAA4HTTPV6HeaderVGvp">headers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Collection of containers that represent key:value HTTP Header fields.</p>
+
+<p>Default value is <code>[]</code> (empty).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Structs/HTTP.html">HTTP</a></span><span class="o">.</span><span class="kt">Header</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC6methodAA4HTTPV6MethodOvp"></a>
+                    <a name="//apple_ref/swift/Property/method" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC6methodAA4HTTPV6MethodOvp">method</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The desired http method over which you want to talk with the desired network resource,
+as specified in the http communication protocol.</p>
+
+<p>Default value is <code>.GET</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">method</span><span class="p">:</span> <span class="kt"><a href="../../Structs/HTTP.html">HTTP</a></span><span class="o">.</span><span class="kt">Method</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC7timeoutAA10TimePeriodOvp"></a>
+                    <a name="//apple_ref/swift/Property/timeout" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC7timeoutAA10TimePeriodOvp">timeout</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The timeout duration of this communication.</p>
+
+<p>Default value is 10 seconds.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt"><a href="../../Enums/TimePeriod.html">TimePeriod</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Coding%20&amp;%20Decoding"></a>
+                <a name="//apple_ref/swift/Section/Coding &amp; Decoding" class="dashAnchor"></a>
+                <a href="#/Coding%20&amp;%20Decoding">
+                  <h3 class="section-name">Coding &amp; Decoding</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC06decodeE0yx10Foundation4DataVKF"></a>
+                    <a name="//apple_ref/swift/Method/decodeResponse(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC06decodeE0yx10Foundation4DataVKF">decodeResponse(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The function whose purpose is to convert the server response data in to the <code>ResponseDataType</code> that you have passed.</p>
+
+<p>By default this function is capable of converting the data into Codable JSONs, but if you want custom conversion
+you can override this function and provide your own.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    if error in the conversion occurs, if you are overriding this,
+throwing is the only way you can say that you fail the conversion.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">decodeResponse</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">ResponseDataType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the raw data that has to be converted to <code>ResponseDataType</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the already converted <code>ResponseDataType</code> object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Calling%20The%20Endpoint"></a>
+                <a name="//apple_ref/swift/Section/Calling The Endpoint" class="dashAnchor"></a>
+                <a href="#/Calling%20The%20Endpoint">
+                  <h3 class="section-name">Calling The Endpoint</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC10completionAEy_xGyxSg_AC5ErrorOSgtc_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC10completionAEy_xGyxSg_AC5ErrorOSgtc_tcfc">init(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Invoke this initializer to call the Endpoint.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">ResponseDataType</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Endpoint.html">Endpoint</a></span><span class="o">.</span><span class="kt"><a href="../../Structs/Endpoint/Error.html">Error</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>completion block, that gives you the server response in the for of <code>ResponseDataType</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the server response, parsed as <code>ResponseDataType</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>error parameter, that is populated in case error has occured.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Endpoint%20With%20Response%20Only"></a>
+                <a name="//apple_ref/swift/Section/Endpoint With Response Only" class="dashAnchor"></a>
+                <a href="#/Endpoint%20With%20Response%20Only">
+                  <h3 class="section-name">Endpoint With Response Only</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC16generatedRequest10Foundation10URLRequestVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/generatedRequest" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC16generatedRequest10Foundation10URLRequestVSgvp">generatedRequest</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generates url request by combining all configurable properties.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">generatedRequest</span><span class="p">:</span> <span class="kt">URLRequest</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Helpers"></a>
+                <a name="//apple_ref/swift/Section/Helpers" class="dashAnchor"></a>
+                <a href="#/Helpers">
+                  <h3 class="section-name">Helpers</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC06handleE04data03urlE05error10completiony10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgyxSg_AcROSgtctF"></a>
+                    <a name="//apple_ref/swift/Method/handleResponse(data:urlResponse:error:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13NetworkingKit8EndpointV20WithResponseTypeOnlyC06handleE04data03urlE05error10completiony10Foundation4DataVSg_So13NSURLResponseCSgs5Error_pSgyxSg_AcROSgtctF">handleResponse(data:urlResponse:error:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles the server response as received directly by the <code>URLDataTask</code>&lsquo;s completion block.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">handleResponse</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?,</span> <span class="nv">urlResponse</span><span class="p">:</span> <span class="kt">URLResponse</span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Swift</span><span class="o">.</span><span class="kt"><a href="../../Structs/Endpoint/Error.html">Error</a></span><span class="p">?,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ResponseDataType</span><span class="p">?,</span> <span class="kt"><a href="../../Structs/Endpoint.html">Endpoint</a></span><span class="o">.</span><span class="kt"><a href="../../Structs/Endpoint/Error.html">Error</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>pass the data as received directly from the server.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>urlResponse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>pass the url response as received directly from the server.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>pass the error parameter as received directly from the server.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the completion block that you want called with the parsed response.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-31)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

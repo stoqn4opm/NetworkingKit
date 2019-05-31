@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (94% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+          Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/TimePeriod.html">TimePeriod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/URL.html">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/URL/Scheme.html">– Scheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/URLResponse.html">URLResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Endpoint/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Endpoint/WithRequestAndResponseType.html">– WithRequestAndResponseType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Endpoint/WithResponseTypeOnly.html">– WithResponseTypeOnly</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HTTP.html">HTTP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HTTP/Method.html">– Method</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HTTP/Header.html">– Header</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='networkingkit' class='heading'>NetworkingKit</h1>
+
+<p><img src="https://img.shields.io/badge/version-1.0-brightgreen.svg" alt=""></p>
+
+<p>Simple Dynamic Framework, providing abstraction over <code>Foundation</code>&lsquo;s networking classes</p>
+
+<p><code>NetworkingKit</code> contains wrapper classes of <code>URLSession</code> that give you the option to make a API call by subclassing <code><a href="Structs/Endpoint.html">Endpoint</a></code> and providing network specific settings as ovverrides in your class.</p>
+
+<p>By doing this, <code>NetworkingKit</code> is able to achieve syntax of web call at user level (app level) that look like:</p>
+<pre class="highlight swift"><code>
+<span class="kt">SampleGet</span><span class="o">.</span><span class="kt">Call</span> <span class="p">{</span> <span class="n">result</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="c1">// Where `result` is of your custom type set as Generic Type</span>
+    <span class="c1">// and `error` is of kind Endpoint.Error</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>or</p>
+<pre class="highlight swift"><code><span class="kt">SamplePost</span><span class="o">.</span><span class="kt">Call</span><span class="p">(</span><span class="nv">withRequestData</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="c1">// Where `data` is of your custom type set as Generic Type</span>
+    <span class="c1">// Where `result` is of your custom type set as Generic Type</span>
+    <span class="c1">// and `error` is of kind Endpoint.Error</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Build using Swift 5, XCode 10.2, supports iOS 10.0+</p>
+<h1 id='usage' class='heading'>Usage</h1>
+
+<ol>
+<li>Import the <code>NetworkingKit</code> framework to your file.
+<code>swift
+import NetworkingKit
+</code></li>
+<li>Subclass either 
+<code>swift
+Endpoint.WithRequestAndResponseType&lt;RequestDataType: Encodable, ResponseDataType: Codable&gt;
+</code>
+or
+<code>swift
+Endpoint.WithResponseTypeOnly&lt;ResponseDataType: Codable&gt;
+</code></li>
+</ol>
+
+<p>Depending on whether you would like to send http request body in your call.</p>
+
+<ol>
+<li>Provide custom <code>RequestDataType</code> and/or <code>ResponseDataType</code> to your liking</li>
+<li>Set various communication parameters like <code>host</code>, <code>scheme</code>, <code>port</code>, <code>timeout</code>, etc&hellip; by overriding the inherited computed variables in your subclass</li>
+<li>Call the inherited constructor of your subclass with appropriate completion block (the parameter types are inherited automatically) and in the case of <code><a href="Structs/Endpoint/WithRequestAndResponseType.html">Endpoint.WithRequestAndResponseType</a></code> provide your reqest data too as init parameter.</li>
+<li>By default <code>NetworkingKit</code>,  uses <code>JSONEncoder</code> and <code>JSONDecoder</code> classes for parsing and conversion of the request data type to raw http body data and response data to the custom type, but if these conversions are not suitable for your case, you can override <code>encodeRequest()</code> and <code>decodeResponse()</code>  to provide custom conversions to fit your needs.</li>
+</ol>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="c1">/// This is how you define a sample GET endpoint</span>
+<span class="kd">final</span>  <span class="kd">class</span> <span class="kt">Call</span><span class="p">:</span> <span class="kt">Endpoint</span><span class="o">.</span><span class="kt">WithResponseTypeOnly</span><span class="o">&lt;</span><span class="kt">Response</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="c1">// Keep in mind that you should override only properties</span>
+    <span class="c1">// for which you don't like the inherited default values</span>
+
+    <span class="k">override</span> <span class="k">var</span> <span class="nv">host</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"postman-echo.com"</span> <span class="p">}</span>
+
+    <span class="k">override</span> <span class="k">var</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"/get"</span> <span class="p">}</span>
+
+    <span class="k">override</span> <span class="k">var</span> <span class="nv">queryItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">URLQueryItem</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="kt">URLQueryItem</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"foo1"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"bar1"</span><span class="p">),</span>
+        <span class="kt">URLQueryItem</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"foo2"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"bar2"</span><span class="p">)]</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>where <code>Response</code> is:</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Response</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">args</span><span class="p">:</span> <span class="kt">Argument</span>
+    <span class="k">let</span> <span class="nv">headers</span><span class="p">:</span> <span class="kt">Headers</span>
+    <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">args</span> <span class="o">=</span> <span class="s">"args"</span>
+        <span class="k">case</span> <span class="n">headers</span> <span class="o">=</span> <span class="s">"headers"</span>
+        <span class="k">case</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"url"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Argument</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="kd">struct</span> <span class="kt">Headers</span><span class="p">:</span>  <span class="kt">Codable</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+</code></pre>
+
+<p>and you call the enpoint like:</p>
+<pre class="highlight swift"><code><span class="kt">Call</span> <span class="p">{</span> <span class="n">result</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="c1">// here result will be of type `Response`</span>
+    <span class="c1">// error will be of enum case of type `Endpoint.Error` </span>
+<span class="p">}</span>
+</code></pre>
+<h1 id='installation' class='heading'>Installation</h1>
+<h3 id='carthage-installation' class='heading'>Carthage Installation</h3>
+
+<ol>
+<li>In your <code>Cartfile</code> add <code>github &quot;stoqn4opm/NetworkingKit&quot;</code></li>
+<li>Link the build framework with the target in your XCode project</li>
+</ol>
+
+<p>For detailed instructions check the official Carthage guides <a href="https://github.com/Carthage/Carthage">here</a></p>
+<h3 id='manual-installation' class='heading'>Manual Installation</h3>
+
+<ol>
+<li>Download the project and build the shared target called <code>NetworkingKit</code></li>
+<li>Add the product in the list of <q>embed frameworks</q> list inside your project&rsquo;s target or create a work space with NetworkingKit and your project and link directly the product of NetworkingKit&rsquo;s target to your target <q>embed frameworks</q> list</li>
+</ol>
+<h1 id='licence' class='heading'>Licence</h1>
+
+<p>The framework is licensed under MIT licence. For more information see file <code>LICENCE</code></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-05-31)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
