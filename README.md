@@ -103,6 +103,13 @@ Call { result, error in
 
 For detailed instructions check the official Carthage guides [here](https://github.com/Carthage/Carthage)
 
+### CocoaPods Installation
+
+1. In your `Podfile` add `pod 'NetworkingKit', :git => 'https://github.com/stoqn4opm/NetworkingKit.git'`
+2. execute `pod install`
+
+For detailed instructions check the official CocoaPods guides [here](https://guides.cocoapods.org)
+
 ### Manual Installation
 
 1. Download the project and build the shared target called `NetworkingKit`
