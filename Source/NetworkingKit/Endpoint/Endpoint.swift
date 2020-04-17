@@ -16,4 +16,10 @@ public struct Endpoint {
     
     @available(*, unavailable)
     private init() {}
+    
+    /// The `URLSession` object used for creating all endpoints.
+    /// You can set yourself as a delegate to it, or change it to other session created by you.
+    ///
+    /// Default Value is: `URLSession.shared`
+    public static var sharedSession: URLSession = .shared
 }

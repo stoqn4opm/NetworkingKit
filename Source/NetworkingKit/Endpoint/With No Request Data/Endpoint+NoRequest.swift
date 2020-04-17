@@ -102,7 +102,7 @@ extension Endpoint {
             
             guard let request = generatedRequest else { completion(nil, .failedToGenerateRequest); return }
             
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            let task = Endpoint.sharedSession.dataTask(with: request) { data, response, error in
                 // strong reference to self on purpose
                 self.handleResponse(data: data, urlResponse: response, error: error, completion: completion)
             }

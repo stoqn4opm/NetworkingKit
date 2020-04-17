@@ -121,7 +121,7 @@ extension Endpoint {
                 completion(nil, .inputEncodingErrorOccured(error))
             }
             
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            let task = Endpoint.sharedSession.dataTask(with: request) { data, response, error in
                 
                 // strong reference to `self` on purpose! `self` deallocates if reference is weak
                 self.handleResponse(data: data, urlResponse: response, error: error, completion: completion)
