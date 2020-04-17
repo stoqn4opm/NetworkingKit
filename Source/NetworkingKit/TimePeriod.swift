@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 // MARK: - Time Intervals
 
 /// Enum that stores time in humanly readable formats and it is capable of producing `TimeInterval`.

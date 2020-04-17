@@ -8,10 +8,11 @@
 
 import Foundation
 
+
 // MARK: - Errors Messages
 
 extension URLResponse {
     
     /// Error message that is used when wrong kind or `URLResponse` is returned by the server.
-    var errorMessage: String { return "[NetworkingKit] extected HTTPURLResponse, but received \(type(of: self))" }
+    var errorMessage: String { "[NetworkingKit] extected HTTPURLResponse, but received \(type(of: self))" }
 }

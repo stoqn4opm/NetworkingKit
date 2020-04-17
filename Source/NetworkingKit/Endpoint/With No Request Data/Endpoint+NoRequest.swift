@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+// MARK: - Endpoint With Response Body
+
 extension Endpoint {
     
     /// Endpoint that does not set http request body.
@@ -29,12 +32,12 @@ extension Endpoint {
         /// `NetworkingKit` supports `http` and `https`.
         ///
         /// Default value is `.https`.
-        open var scheme: URL.Scheme { return .https }
+        open var scheme: URL.Scheme { .https }
         
         /// The network host we are trying to reach.
         ///
         /// Default value is `"localhost"`
-        open var host: String { return "localhost" }
+        open var host: String { "localhost" }
         
         /// The port over which we want to reach the desired network resource.
         ///
@@ -44,33 +47,33 @@ extension Endpoint {
         /// - 80 for http
         ///
         /// Default values are 443 and 80 based on the scheme.
-        open var port: UInt16 { return scheme == .https ? 443 : 80 }
+        open var port: UInt16 { scheme == .https ? 443 : 80 }
         
         /// The path component of the url, describing exactly which endpoint we want to reach of this host.
         ///
         /// Default value is `"/"`.
-        open var path: String { return "/" }
+        open var path: String { "/" }
 
         /// Collection of name-value pairs from the query portion of a URL.
         ///
         /// Default value is `[]` (empty).
-        open var queryItems: [URLQueryItem] { return [] }
+        open var queryItems: [URLQueryItem] { [] }
         
         /// Collection of containers that represent key:value HTTP Header fields.
         ///
         /// Default value is `[]` (empty).
-        open var headers: [HTTP.Header] { return [] }
+        open var headers: [HTTP.Header] { [] }
         
         /// The desired http method over which you want to talk with the desired network resource,
         /// as specified in the http communication protocol.
         ///
         /// Default value is `.GET`.
-        open var method: HTTP.Method { return .GET }
+        open var method: HTTP.Method { .GET }
         
         /// The timeout duration of this communication.
         ///
         /// Default value is 10 seconds.
-        open var timeout: TimePeriod { return .seconds(10) }
+        open var timeout: TimePeriod { .seconds(10) }
         
         
         // MARK: Coding & Decoding
@@ -84,7 +87,7 @@ extension Endpoint {
         /// - Returns: the already converted `ResponseDataType` object.
         /// - Throws: if error in the conversion occurs, if you are overriding this,
         /// throwing is the only way you can say that you fail the conversion.
-        open func decodeResponse(_ data: Data) throws -> ResponseDataType  { return try JSONDecoder().decode(ResponseDataType.self, from: data) }
+        open func decodeResponse(_ data: Data) throws -> ResponseDataType  { try JSONDecoder().decode(ResponseDataType.self, from: data) }
         
         
         // MARK: Calling The Endpoint
@@ -92,14 +95,14 @@ extension Endpoint {
         /// Invoke this initializer to call the Endpoint.
         ///
         /// - Parameters:
-        ///   - completion: completion block, that gives you the server response in the for of `ResponseDataType`.
+        ///   - completion: completion block, that gives you the server response in the form of `ResponseDataType`.
         ///   - response: the server response, parsed as `ResponseDataType`.
         ///   - error: error parameter, that is populated in case error has occured.
         @discardableResult public init(completion: @escaping (_ response: ResponseDataType?, _ error: Endpoint.Error?) -> ()) {
             
             guard let request = generatedRequest else { completion(nil, .failedToGenerateRequest); return }
             
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 // strong reference to self on purpose
                 self.handleResponse(data: data, urlResponse: response, error: error, completion: completion)
             }

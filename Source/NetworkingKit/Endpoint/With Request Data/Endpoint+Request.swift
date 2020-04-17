@@ -8,7 +8,8 @@
 
 import Foundation
 
-// MARK: - Endpoint With Request & Response
+
+// MARK: - Endpoint With Request & Response Body
 
 extension Endpoint {
     
@@ -32,12 +33,12 @@ extension Endpoint {
         /// `NetworkingKit` supports `http` and `https`.
         ///
         /// Default value is `.https`.
-        open var scheme: URL.Scheme { return .https }
+        open var scheme: URL.Scheme { .https }
         
         /// The network host we are trying to reach.
         ///
         /// Default value is `"localhost"`
-        open var host: String { return "localhost" }
+        open var host: String { "localhost" }
         
         /// The port over which we want to reach the desired network resource.
         ///
@@ -47,33 +48,33 @@ extension Endpoint {
         /// - 80 for http
         ///
         /// Default values are 443 and 80 based on the scheme.
-        open var port: UInt16 { return scheme == .https ? 443 : 80 }
+        open var port: UInt16 { scheme == .https ? 443 : 80 }
         
         /// The path component of the url, describing exactly which endpoint we want to reach of this host.
         ///
         /// Default value is `"/"`.
-        open var path: String { return "/" }
+        open var path: String { "/" }
         
         /// Collection of name-value pairs from the query portion of a URL.
         ///
         /// Default value is `[]` (empty).
-        open var queryItems: [URLQueryItem] { return [] }
+        open var queryItems: [URLQueryItem] { [] }
         
         /// Collection of containers that represent key:value HTTP Header fields.
         ///
         /// Default value is `[]` (empty).
-        open var headers: [HTTP.Header] { return [] }
+        open var headers: [HTTP.Header] { [] }
         
         /// The desired http method over which you want to talk with the desired network resource,
         /// as specified in the http communication protocol.
         ///
         /// Default value is `.POST`.
-        open var method: HTTP.Method { return .POST }
+        open var method: HTTP.Method { .POST }
         
         /// The timeout duration of this communication.
         ///
         /// Default value is 10 seconds.
-        open var timeout: TimePeriod { return .seconds(10) }
+        open var timeout: TimePeriod { .seconds(10) }
         
         
         // MARK: Coding & Decoding
@@ -87,7 +88,7 @@ extension Endpoint {
         /// - Returns: the already converted `ResponseDataType` object.
         /// - Throws: if error in the conversion occurs, if you are overriding this,
         /// throwing is the only way you can say that you fail the conversion.
-        open func decodeResponse(_ data: Data) throws -> ResponseDataType  { return try JSONDecoder().decode(ResponseDataType.self, from: data) }
+        open func decodeResponse(_ data: Data) throws -> ResponseDataType  { try JSONDecoder().decode(ResponseDataType.self, from: data) }
         
         /// The function whose purpose is to convert the request data of type `RequestDataType` into raw `Data` that will be set as http request body.
         ///
@@ -98,7 +99,7 @@ extension Endpoint {
         /// - Returns: raw data ready to be set as http request body.
         /// - Throws: if error in the conversion occurs, if you are overriding this,
         /// throwing is the only way you can say that you fail the conversion.
-        open func encodeRequest(_ request: RequestDataType) throws -> Data { return try JSONEncoder().encode(request) }
+        open func encodeRequest(_ request: RequestDataType) throws -> Data { try JSONEncoder().encode(request) }
         
         
         // MARK: Calling The Endpoint
@@ -107,7 +108,7 @@ extension Endpoint {
         ///
         /// - Parameters:
         ///   - requestBody: pass here instance of `RequestDataType` that will be used as http request body.
-        ///   - completion: completion block, that gives you the server response in the for of `ResponseDataType`.
+        ///   - completion: completion block, that gives you the server response in the form of `ResponseDataType`.
         ///   - response: the server response, parsed as `ResponseDataType`.
         ///   - error: error parameter, that is populated in case error has occured.
         @discardableResult public init(withRequestData requestBody: RequestDataType, completion: @escaping (_ response: ResponseDataType?, _ error: Endpoint.Error?) -> ()) {
@@ -120,7 +121,7 @@ extension Endpoint {
                 completion(nil, .inputEncodingErrorOccured(error))
             }
             
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 
                 // strong reference to `self` on purpose! `self` deallocates if reference is weak
                 self.handleResponse(data: data, urlResponse: response, error: error, completion: completion)

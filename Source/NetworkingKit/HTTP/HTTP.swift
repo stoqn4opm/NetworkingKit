@@ -8,7 +8,12 @@
 
 import Foundation
 
+
 // MARK: - Group Definition
 
 /// Container holding constants and logic about common networking stuff.
-public struct HTTP { }
+public struct HTTP {
+    
+    @available(*, unavailable)
+    private init() {}
+}
