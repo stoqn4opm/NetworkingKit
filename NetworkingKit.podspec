@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NetworkingKit'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Simple Dynamic Framework, providing abstraction over Foundation networking classes'
   s.swift_versions   = ['5.0']
 
