@@ -110,7 +110,7 @@ extension Endpoint {
         ///   - requestBody: pass here instance of `RequestDataType` that will be used as http request body.
         ///   - completion: completion block, that gives you the server response in the form of `ResponseDataType`.
         ///   - response: the server response, parsed as `ResponseDataType`.
-        ///   - error: error parameter, that is populated in case error has occured.
+        ///   - error: error parameter, that is populated in case error has occurred.
         @discardableResult public init(withRequestData requestBody: RequestDataType, completion: @escaping (_ response: ResponseDataType?, _ error: Endpoint.Error?) -> ()) {
             
             guard var request = generatedRequest else { completion(nil, .failedToGenerateRequest); return }
@@ -118,7 +118,7 @@ extension Endpoint {
             do {
                 request.httpBody = try encodeRequest(requestBody)
             } catch {
-                completion(nil, .inputEncodingErrorOccured(error))
+                completion(nil, .inputEncodingErrorOccurred(error))
             }
             
             let task = Endpoint.sharedSession.dataTask(with: request) { data, response, error in
@@ -144,7 +144,7 @@ extension Endpoint.WithRequestAndResponseType {
     ///   - completion: the completion block that you want called with the parsed response.
     private func handleResponse(data: Data?, urlResponse: URLResponse?, error: Swift.Error?, completion: @escaping (ResponseDataType?, Endpoint.Error?) -> ()) {
         
-        guard error == nil else { completion(nil, .urlSessionErrorOccured(error)); return }
+        guard error == nil else { completion(nil, .urlSessionErrorOccurred(error)); return }
         guard let httpResponse = urlResponse as? HTTPURLResponse else { completion(nil, .unexpectedURLResponse(urlResponse?.errorMessage)); return }
         
         guard httpResponse.statusCode >= 200 && httpResponse.statusCode < 400 else { completion(nil, .badStatusCode(httpResponse.statusCode)); return }
@@ -155,7 +155,7 @@ extension Endpoint.WithRequestAndResponseType {
             let parsedData = try decodeResponse(data)
             completion(parsedData, nil)
         } catch {
-            completion(nil, .responseDecodingErrorOccured(error))
+            completion(nil, .responseDecodingErrorOccurred(error))
         }
     }
 }

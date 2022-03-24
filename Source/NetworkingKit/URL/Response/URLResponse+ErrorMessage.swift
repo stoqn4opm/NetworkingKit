@@ -14,5 +14,5 @@ import Foundation
 extension URLResponse {
     
     /// Error message that is used when wrong kind or `URLResponse` is returned by the server.
-    var errorMessage: String { "[NetworkingKit] extected HTTPURLResponse, but received \(type(of: self))" }
+    var errorMessage: String { "[NetworkingKit] expected HTTPURLResponse, but received \(type(of: self))" }
 }
