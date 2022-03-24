@@ -14,7 +14,7 @@ import Foundation
 extension HTTP.Header {
     
     /// Collection of commonly used http header keys.
-    public enum Key: String {
+    public enum Key {
         
         
         /// The HTTP Authorization request header contains the credentials to authenticate a user agent with a server,
@@ -24,7 +24,7 @@ extension HTTP.Header {
         /// ```
         /// Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
         /// ```
-        case authorization = "Authorization"
+        case authorization
         
         /// The Accept request HTTP header advertises which content types, expressed as MIME types,
         /// the client is able to understand. Using content negotiation, the server then selects one of the proposals,
@@ -39,7 +39,7 @@ extension HTTP.Header {
         /// General default
         /// Accept: */*
         /// ```
-        case accept = "Accept"
+        case accept
         
         /// The Accept-Encoding request HTTP header advertises which content encoding, usually a compression algorithm,
         /// the client is able to understand. Using content negotiation, the server selects one of the proposals,
@@ -54,7 +54,7 @@ extension HTTP.Header {
         /// Accept-Encoding: identity
         /// Accept-Encoding: *
         /// ```
-        case acceptEncoding = "Accept-Encoding"
+        case acceptEncoding
         
         /// The Content-Type entity header is used to indicate the media type of the resource.
         ///
@@ -63,11 +63,11 @@ extension HTTP.Header {
         /// Content-Type: text/html; charset=utf-8
         /// Content-Type: multipart/form-data; boundary=something
         /// ```
-        case contentType = "Content-Type"
+        case contentType
         
         /// The User-Agent request header contains a characteristic string that allows the network protocol peers to identify
         /// the application type, operating system, software vendor or software version of the requesting software user agent.
-        case userAgent = "User-Agent"
+        case userAgent
         
         /// An API key or application programming interface key is a code that gets passed
         /// in by computer applications. The program or application then calls the API
@@ -78,6 +78,22 @@ extension HTTP.Header {
         ///
         /// An API key can act as a secret authentication token as well as a unique identifier.
         /// Typically, the key will come with a set of access rights for the API that it is associated with.
-        case xApiKey = "x-api-key"
+        case xApiKey
+        
+        /// Gives you the ability to set any other string you like as key.
+        case custom(String)
+        
+        
+        var rawValue: String {
+            switch self {
+            case .authorization: return "Authorization"
+            case .accept: return "Accept"
+            case .acceptEncoding: return "Accept-Encoding"
+            case .contentType: return "Content-Type"
+            case .userAgent: return "User-Agent"
+            case .xApiKey: return "x-api-key"
+            case let .custom(key): return key
+            }
+        }
     }
 }
