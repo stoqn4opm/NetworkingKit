@@ -1,6 +1,6 @@
 # NetworkingKit
 
-![](https://img.shields.io/badge/version-1.0-brightgreen.svg)
+![](https://img.shields.io/badge/version-2.0.0-brightgreen.svg)
 
 Simple Dynamic Framework, providing abstraction over `Foundation`'s networking classes
 
@@ -25,7 +25,7 @@ SamplePost.Call(withRequestData: data) { result, error in
 }
 ```
 
-Build using Swift 5, XCode 10.2, supports iOS 10.0+
+Build using Swift 5, XCode 13, supports iOS 12.0+
 
 # Usage
 
@@ -95,6 +95,13 @@ Call { result, error in
 ```
 
 # Installation
+
+### Swift Package Manager Installation
+
+1. Go to your XCode project settings tap on the project name under section "PROJECT"
+2. Tap on tab "Package Dependencies"
+3. Add the following package `https://github.com/stoqn4opm/NetworkingKit.git`
+5. Link with appropriate targets
 
 ### Carthage Installation
 
