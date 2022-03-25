@@ -6,6 +6,7 @@
 //  Copyright © 2019 Stoyan Stoyanov. All rights reserved.
 //
 
+import Foundation
 import NetworkingKit
 
 /// The HTTP GET request method is meant to retrieve data from a server. The data is identified by a unique URI (Uniform Resource Identifier).
@@ -26,9 +27,9 @@ extension SampleGet {
     /// If you want to call the endpoint initialize this.
     final class Call: Endpoint.WithResponseTypeOnly<Response> {
         
-        override var host: String { return "postman-echo.com" }
+        override var host: String { "postman-echo.com" }
         
-        override var path: String { return "/get" }
+        override var path: String { "/get" }
         
         override var queryItems: [URLQueryItem] {
             

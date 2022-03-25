@@ -6,6 +6,7 @@
 //  Copyright © 2019 Stoyan Stoyanov. All rights reserved.
 //
 
+import Foundation
 import NetworkingKit
 
 /// This container has all things reagaring the `SamplePost` call.
@@ -16,16 +17,17 @@ extension SamplePost {
     /// If you want to call the endpoint initialize this.
     final class Call: Endpoint.WithRequestAndResponseType<Request, Response> {
         
-        override var host: String { return "postman-echo.com" }
+        override var host: String { "postman-echo.com" }
         
-        override var path: String { return "/transform/collection" }
+        override var path: String { "/post" }
         
         override var queryItems: [URLQueryItem] {
-            return [URLQueryItem(name: "from", value: "2"),
-                    URLQueryItem(name: "to", value: "1")] }
+            [URLQueryItem(name: "from", value: "2"),
+             URLQueryItem(name: "to", value: "1")]
+        }
         
         override var headers: [HTTP.Header] {
-            return [.init(.contentType, value: HTTP.Header.ContentType.json.rawValue)]
+            [.init(.contentType, value: HTTP.Header.ContentType.json.rawValue)]
         }
     }
 }

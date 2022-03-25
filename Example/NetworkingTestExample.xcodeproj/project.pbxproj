@@ -3,37 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E8A316A27EDA59F004F2EA7 /* NetworkingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5E8A316927EDA59F004F2EA7 /* NetworkingKit */; };
 		5EDFD55322A0621E0063CF17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD55222A0621E0063CF17 /* AppDelegate.swift */; };
 		5EDFD55522A0621E0063CF17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD55422A0621E0063CF17 /* ViewController.swift */; };
 		5EDFD55822A0621E0063CF17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDFD55622A0621E0063CF17 /* Main.storyboard */; };
 		5EDFD55A22A0623C0063CF17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDFD55922A0623C0063CF17 /* Assets.xcassets */; };
 		5EDFD55D22A0623C0063CF17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDFD55B22A0623C0063CF17 /* LaunchScreen.storyboard */; };
-		5EDFD56522A062490063CF17 /* NetworkingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDFD56422A062490063CF17 /* NetworkingKit.framework */; };
-		5EDFD56622A062490063CF17 /* NetworkingKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDFD56422A062490063CF17 /* NetworkingKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EDFD56E22A087350063CF17 /* SampleGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD56D22A087350063CF17 /* SampleGet.swift */; };
 		5EDFD57022A0874C0063CF17 /* SampleGet+ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD56F22A0874C0063CF17 /* SampleGet+ResponseData.swift */; };
 		5EDFD57322A089750063CF17 /* SamplePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD57222A089750063CF17 /* SamplePost.swift */; };
 		5EDFD57522A089C30063CF17 /* SamplePost+RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD57422A089C30063CF17 /* SamplePost+RequestData.swift */; };
 		5EDFD57722A08A590063CF17 /* SamplePost+ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD57622A08A590063CF17 /* SamplePost+ResponseData.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5EDFD56722A062490063CF17 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5EDFD56622A062490063CF17 /* NetworkingKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5EDFD54F22A0621E0063CF17 /* NetworkingTestExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingTestExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EDFD56522A062490063CF17 /* NetworkingKit.framework in Frameworks */,
+				5E8A316A27EDA59F004F2EA7 /* NetworkingKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,13 +117,15 @@
 				5EDFD54B22A0621E0063CF17 /* Sources */,
 				5EDFD54C22A0621E0063CF17 /* Frameworks */,
 				5EDFD54D22A0621E0063CF17 /* Resources */,
-				5EDFD56722A062490063CF17 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = NetworkingTestExample;
+			packageProductDependencies = (
+				5E8A316927EDA59F004F2EA7 /* NetworkingKit */,
+			);
 			productName = NetworkingTestExample;
 			productReference = 5EDFD54F22A0621E0063CF17 /* NetworkingTestExample.app */;
 			productType = "com.apple.product-type.application";
@@ -402,6 +389,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5E8A316927EDA59F004F2EA7 /* NetworkingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkingKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5EDFD54722A0621E0063CF17 /* Project object */;
 }
