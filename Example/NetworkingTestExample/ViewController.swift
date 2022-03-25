@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var page = 1
 
     @IBAction func postButtonTapped(_ sender: Any) {
         
@@ -36,9 +37,21 @@ class ViewController: UIViewController {
     
     @IBAction func getButtonTapped(_ sender: Any) {
         
-        SampleGet.Call { (result, error) in
+        GalleryEndpoint(inTimeWindow: .all, page: page, appClientId: "ef8d4acb74c28c0") { result, error in
             print("result: \(String(describing: result))")
             print("error: \(String(describing: error))")
         }
+        
+        GallerySearchEndpoint(searchQuery: "cat", inTimeWindow: .all, page: page, appClientId: "ef8d4acb74c28c0") { result, error in
+            print("result: \(String(describing: result))")
+            print("error: \(String(describing: error))")
+        }
+        
+        page += 1
+//        
+//        SampleGet.Call { (result, error) in
+//            print("result: \(String(describing: result))")
+//            print("error: \(String(describing: error))")
+//        }
     }
 }

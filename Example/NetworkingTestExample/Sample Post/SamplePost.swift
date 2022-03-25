@@ -9,8 +9,8 @@
 import Foundation
 import NetworkingKit
 
-/// This container has all things reagaring the `SamplePost` call.
-struct SamplePost {}
+/// This container has all things regarding the `SamplePost` call.
+struct SamplePost { }
 
 extension SamplePost {
     
